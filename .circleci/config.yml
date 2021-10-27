@@ -8,7 +8,8 @@ jobs:
     executor:
       name: node/default
     steps:
-      - checkout    
+      - checkout  
+      - eb/setup
       - run: npm install
       - run:
           name: Deploying
