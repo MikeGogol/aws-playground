@@ -1,1 +1,1 @@
-install: cd backend && npm install
+make: cd backend && npm install
