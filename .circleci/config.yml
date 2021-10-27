@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - eb/setup
-      - run: npm install
+      - run: cd backend && npm install
       - run:
           name: Deploying
           command: cd backend && eb deploy Weddingapp-env
