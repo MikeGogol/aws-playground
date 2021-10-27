@@ -26,7 +26,3 @@ workflows:
     jobs:
       - build-and-test:
           context: aws
-          filters:
-            branches:
-              only:
-                - master
