@@ -9,7 +9,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  return res.status(200).json({ msg: "Hello bitches" });
+  return res.status(200).json({ msg: "Hello new bitches" });
 });
 
 app.get("/healt", (req, res) => {
