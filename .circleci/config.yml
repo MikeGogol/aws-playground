@@ -1,25 +1,18 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1
+  node: circleci/node@4.1.0
+  eb: circleci/aws-elastic-beanstalk@1.0.0
+
 jobs:
   build-and-test:
     executor:
       name: node/default
     steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run:
-                name: Installing deployment dependencies
-                command: |
-                  sudo apt-get -y -qq update
-                  sudo apt-get install python-pip python-dev build-essential
-                  sudo pip install --upgrade setuptools
-                  sudo pip install awsebcli --upgrade
-            - run:
-                name: Deploying
-                command: eb deploy Weddingapp-env
+      - checkout    
+      - run: npm install
+      - run:
+          name: Deploying
+          command: eb deploy Weddingapp-env
 
 workflows:
   build-and-test:
