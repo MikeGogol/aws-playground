@@ -1,0 +1,9 @@
+branch-defaults:
+  master:
+    environment: Weddingapp-env
+global:
+  application_name: wedding-app
+  default_ec2_keyname: e-kkiytbhhmc
+  default_platform: Node.js 14 running on 64bit Amazon Linux 2/5.4.7
+  default_region: us-east-2
+  sc: git
