@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    image: mysql
+    platform: linux/x86_64
+    restart: always
+    env_file: ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: example_db
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 4s
+      retries: 5
+
+    ports:
+      - 3306:3306
+    volumes:
+      - db-config:/etc/mysql
+      - db-data:/var/lib/mysql
+      - ./db/backup/files/:/data_backup/data
+
+volumes:
+  db-config:
+  db-data:

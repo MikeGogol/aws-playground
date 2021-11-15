@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 
 const app = express();
 dotenv.config();
+require("./database");
 
 const port = process.env.PORT || 3000;
 
@@ -18,6 +19,6 @@ app.get("/", (req, res) => {
     .json({ msg: "Hello new backend bitches + " + process.env.TEST_VARIABLE });
 });
 
-app.get("/healt", (req, res) => {
+app.get("/health", (req, res) => {
   return res.status(200).json({ health: "ok" });
 });
