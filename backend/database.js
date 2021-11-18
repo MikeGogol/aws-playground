@@ -1,9 +1,9 @@
 const Sequelize = require("sequelize");
 
-const databaseName = process.env.DB_NAME;
-const databaseUser = process.env.DB_USER;
-const databasePassword = process.env.DB_PASSWORD;
-const databaseHost = process.env.DB_HOST;
+const databaseName = process.env.RDS_DB_NAME;
+const databaseUser = process.env.RDS_USERNAME;
+const databasePassword = process.env.RDS_PASSWORD;
+const databaseHost = process.env.RDS_DB_HOSTNAME;
 
 console.log("test baza", process.env.TEST_VARIABLE);
 
