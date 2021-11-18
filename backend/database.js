@@ -12,7 +12,10 @@ const database = new Sequelize(databaseName, databaseUser, databasePassword, {
   dialect: "mysql",
   port: 3306,
   dialectOptions: {
-    ssl: "Amazon RDS",
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
   },
   pool: { maxConnections: 5, maxIdleTime: 30 },
   logging: console.log,
