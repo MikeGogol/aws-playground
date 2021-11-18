@@ -8,6 +8,11 @@ const databaseHost = process.env.DB_HOST;
 const database = new Sequelize(databaseName, databaseUser, databasePassword, {
   host: databaseHost,
   dialect: "mysql",
+  port: 3306,
+  dialectOptions: {
+    ssl: true,
+  },
+  pool: { maxConnections: 5, maxIdleTime: 30 },
   logging: console.log,
 });
 
