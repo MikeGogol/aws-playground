@@ -3,9 +3,9 @@ const Sequelize = require("sequelize");
 const databaseName = process.env.RDS_DB_NAME;
 const databaseUser = process.env.RDS_USERNAME;
 const databasePassword = process.env.RDS_PASSWORD;
-const databaseHost = process.env.RDS_DB_HOSTNAME;
+const databaseHost = process.env.DB_HOST;
 
-console.log("test baza", process.env.TEST_VARIABLE);
+console.log("test baza", process.env.RDS_PASSWORD);
 
 const database = new Sequelize(databaseName, databaseUser, databasePassword, {
   host: databaseHost,
@@ -17,7 +17,7 @@ const database = new Sequelize(databaseName, databaseUser, databasePassword, {
       rejectUnauthorized: false,
     },
   },
-  pool: { maxConnections: 5, maxIdleTime: 30 },
+  // pool: { maxConnections: 5, maxIdleTime: 30 },
   logging: console.log,
 });
 
