@@ -1,9 +1,9 @@
-const Sequelize = require("sequelize");
+import { Sequelize } from "sequelize";
 
-const databaseName = process.env.RDS_DB_NAME;
-const databaseUser = process.env.RDS_USERNAME;
-const databasePassword = process.env.RDS_PASSWORD;
-const databaseHost = process.env.DB_HOST;
+const databaseName = process.env.RDS_DB_NAME as string;
+const databaseUser = process.env.RDS_USERNAME as string;
+const databasePassword = process.env.RDS_PASSWORD as string;
+const databaseHost = process.env.DB_HOST as string;
 
 console.log("test baza", process.env.RDS_PASSWORD);
 
@@ -34,4 +34,4 @@ async function tryConnection() {
 }
 
 tryConnection();
-module.export = database;
+export default database;
